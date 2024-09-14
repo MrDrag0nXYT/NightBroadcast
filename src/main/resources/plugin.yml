@@ -1,0 +1,45 @@
+name: NightBroadcast
+version: '1.0.0'
+main: zxc.MrDrag0nXYT.nightBroadcast.NightBroadcast
+api-version: '1.18'
+authors: [ MrDrag0nXYT (drakoshaslv) ]
+website: https://drakoshaslv.ru
+
+depend: [PlaceholderAPI]
+
+commands:
+  broadcast:
+    aliases:
+      - bc
+    usage: /<command> <category> <text>
+  nightbroadcast:
+    aliases:
+      - nightbc
+      - nbc
+    usage: /<command> <reload>
+
+permissions:
+  nightbc.player.broadcast:
+    default: false
+  nightbc.player.broadcast.cooldown.bypass:
+    default: false
+
+  nightbc.admin.reload:
+    default: op
+
+  nightbc.player.*:
+    default: false
+    children:
+      nightbc.player.broadcast: true
+      nightbc.player.broadcast.cooldown.bypass: true
+
+  nightbc.admin.*:
+    default: op
+    children:
+      nightbc.player.reload: true
+
+  nightbc.*:
+    default: op
+    children:
+      nightbc.admin.*: true
+      nightbc.player.*: true

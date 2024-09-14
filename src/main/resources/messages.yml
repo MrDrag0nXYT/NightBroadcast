@@ -1,0 +1,31 @@
+
+global:
+  no-permission:
+    - " <#745c97>NightBroadcast <#c0c0c0>› <#fcfcfc>У вас <#d45079>недостаточно прав</#d45079> для выполнения этой команды!"
+  only-for-players:
+    - " <#745c97>NightBroadcast <#c0c0c0>› <#fcfcfc>Сообщение в этой категории может отправлять <#d45079>только игрок</#d45079>!"
+
+commands:
+  broadcast:
+    not-played-min-time:
+      - " <#745c97>NightBroadcast <#c0c0c0>› <#fcfcfc>Для использования этой команды <#745c97>вам необходимо наиграть хотя бы 1 час</#745c97>!"
+    usage:
+      - ""
+      - " <#745c97>NightBroadcast <#c0c0c0>› <#fcfcfc>Использование:"
+      - "  <#c0c0c0>‣ <click:suggest_command:'/broadcast'><#745c97>/broadcast категория текст</click> <#c0c0c0>- <#fcfcfc>отправить сообщение"
+      - ""
+    no-permission:
+      - " <#745c97>NightBroadcast <#c0c0c0>› <#fcfcfc>У вас <#d45079>недостаточно прав</#d45079> для отправки в эту категорию!"
+    not-found:
+      - " <#745c97>NightBroadcast <#c0c0c0>› <#fcfcfc>Категория <#745c97>%category_name%</#745c97> не найдена"
+    cooldown:
+      - " <#745c97>NightBroadcast <#c0c0c0>› <#fcfcfc>Вы не можете использовать эту команду <#d45079>так часто</#d45079>!"
+
+  nightbroadcast:
+    usage:
+      - ""
+      - " <#745c97>NightBroadcast <#c0c0c0>› <#fcfcfc>Использование:"
+      - "  <#c0c0c0>‣ <click:suggest_command:'/nightbroadcast reload'><#745c97>/nightbroadcast reload</click> <#c0c0c0>- <#fcfcfc>перезагрузить плагин"
+      - ""
+    reloaded:
+      - " <#745c97>NightBroadcast <#c0c0c0>› <#fcfcfc>Плагин <#ace1af>успешно</#ace1af> перезагружен"

@@ -1,0 +1,89 @@
+#
+#  ███╗░░██╗██╗░██████╗░██╗░░██╗████████╗██████╗░██████╗░░█████╗░░█████╗░██████╗░░█████╗░░█████╗░░██████╗████████╗
+#  ████╗░██║██║██╔════╝░██║░░██║╚══██╔══╝██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝
+#  ██╔██╗██║██║██║░░██╗░███████║░░░██║░░░██████╦╝██████╔╝██║░░██║███████║██║░░██║██║░░╚═╝███████║╚█████╗░░░░██║░░░
+#  ██║╚████║██║██║░░╚██╗██╔══██║░░░██║░░░██╔══██╗██╔══██╗██║░░██║██╔══██║██║░░██║██║░░██╗██╔══██║░╚═══██╗░░░██║░░░
+#  ██║░╚███║██║╚██████╔╝██║░░██║░░░██║░░░██████╦╝██║░░██║╚█████╔╝██║░░██║██████╔╝╚█████╔╝██║░░██║██████╔╝░░░██║░░░
+#  ╚═╝░░╚══╝╚═╝░╚═════╝░╚═╝░░╚═╝░░░╚═╝░░░╚═════╝░╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝╚═════╝░░╚════╝░╚═╝░░╚═╝╚═════╝░░░░╚═╝░░░
+#
+#                             Author: MrDrag0nXYT (https://drakoshaslv.ru)
+#                     Source code: https://github.com/MrDrag0nXYT/NightBroadcast
+#
+
+# Enable bStats metrics? You can see it here: https://bstats.org/plugin/bukkit/NightBroadcast/23354
+enable-metrics: true
+
+# Send broadcasts messages to console?
+send-broadcasts-to-console: false
+
+# Minimal played time to use broadcasts, set in seconds. Default 3600 (1 hour). Set any small number (e.g. 1) to disable
+min-played-time: 3600
+
+#
+# Formatting - MiniMessage + Legacy &#abcdef
+#  - Online MiniMessage editor - https://webui.advntr.dev/
+#
+# Placeholders:
+#  - %broadcasttext% - text of message, input by player
+#  - PlaceholderAPI placeholders for sender
+#
+# Permission:
+#  - Set for restrict players use category without it
+#  - If not set, not checks
+#
+# Only for players:
+#  - If category will be used not only by player, set to false. By default (if not set) true
+#  - If only-for-players: false and runned from console, %player_name% will be null!!!
+#
+# Cooldown in seconds, disabled if not set. Blocks broadcast command
+#
+# Example of category config:
+# |  bc:
+# |    cooldown: 5 # in seconds
+# |    permission: "nbc.categories.bc"
+# |    only-for-players: false
+# |    title:
+# |      enabled: true
+# |      title: "<#745c97>Title"
+# |      subtitle: "<#fcfcfc>Subtitle"
+# |      actionbar: "<#fcfcfc>%player_name% <#c0c0c0>›</#c0c0c0> %broadcasttext%"
+# |      time: # Set in ticks (20 ticks = 1 second)
+# |        fade-in: 10
+# |        stay: 70
+# |        fade-out: 20
+# |    sound:
+# |      enabled: true
+# |      name: BLOCK_NOTE_BLOCK_PLING
+# |      volume: 1.0
+# |      pitch: 1.0
+# |    format:
+# |      - " <#745c97>Объявление</#745c97> <#fcfcfc>%player_name% <#c0c0c0>›</#c0c0c0> %broadcasttext%"
+#
+categories:
+  bc:
+    cooldown: 5
+    permission: "nbc.categories.bc"
+    only-for-players: false
+    title:
+      enabled: true
+      title: "<#745c97>Объявление"
+      subtitle: ""
+      actionbar: "<#fcfcfc>%player_name% <#c0c0c0>›</#c0c0c0> %broadcasttext%"
+      time:
+        fade-in: 10
+        stay: 70
+        fade-out: 20
+    sound:
+      enabled: true
+      name: BLOCK_NOTE_BLOCK_PLING
+      volume: 1.0
+      pitch: 1.0
+    format:
+      - " <#745c97>Объявление</#745c97> <#c0c0c0>•</#c0c0c0> <#fcfcfc>%player_name% <#c0c0c0>›</#c0c0c0> %broadcasttext%"
+  ad:
+    only-for-players: true
+    format:
+      - " <#ace1af>Реклама</#ace1af> <#c0c0c0>•</#c0c0c0> <#fcfcfc>%player_name% <#c0c0c0>›</#c0c0c0> %broadcasttext%"
+  pvp:
+    format:
+      - " <#d45079>PvP</#d45079> <#c0c0c0>•</#c0c0c0> <#fcfcfc>%player_name% <#c0c0c0>›</#c0c0c0> %broadcasttext%"
